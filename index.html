@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>QR Code Generator & Scanner</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="container">
+
+        <!-- Header -->
+        <header class="header">
+            <h1>QR Code Generator</h1>
+            <p>Create QR codes for URL, Text, Phone, bKash, Nagad & Rocket</p>
+        </header>
+
+
+        <!-- Tabs -->
+        <div class="tabs">
+            <button class="tab-btn active" data-tab="generator">
+                Generate QR
+            </button>
+
+            <button class="tab-btn" data-tab="scanner">
+                Scan QR
+            </button>
+        </div>
+
+
+        <!-- ================= GENERATOR ================= -->
+
+        <section id="generator" class="tab-content active">
+
+            <div class="card">
+
+                <h2>Generate QR Code</h2>
+
+                <!-- QR Type -->
+                <label for="qrType">QR Type</label>
+
+                <select id="qrType">
+
+                    <option value="text">
+                        📝 Text
+                    </option>
+
+                    <option value="url">
+                        🔗 Website URL
+                    </option>
+
+                    <option value="phone">
+                        📱 Phone Number
+                    </option>
+
+                    <option value="bkash">
+                        🟣 bKash Number
+                    </option>
+
+                    <option value="nagad">
+                        🟠 Nagad Number
+                    </option>
+
+                    <option value="rocket">
+                        🔵 Rocket Number
+                    </option>
+
+                </select>
+
+
+                <!-- Input Label -->
+                <label for="qrText" id="inputLabel">
+                    Enter Text
+                </label>
+
+                <textarea
+                    id="qrText"
+                    rows="4"
+                    placeholder="Enter your text..."
+                ></textarea>
+
+
+                <!-- Logo Upload -->
+                <label for="logoUpload" class="upload-label">
+                    🖼️ Upload Logo
+                </label>
+
+                <input
+                    type="file"
+                    id="logoUpload"
+                    accept="image/png,image/jpeg,image/jpg,image/webp"
+                >
+
+
+                <!-- Logo Preview -->
+                <div id="logoPreview" class="logo-preview">
+
+                    <img
+                        id="previewImage"
+                        src=""
+                        alt="Logo Preview"
+                    >
+
+                    <button id="removeLogo" type="button">
+                        ✕ Remove Logo
+                    </button>
+
+                </div>
+
+
+                <!-- Generate -->
+                <button id="generateBtn" class="primary-btn">
+                    Generate QR Code
+                </button>
+
+
+                <!-- QR Result -->
+                <div id="qrResult" class="qr-result">
+
+                    <h3>Your QR Code</h3>
+
+                    <div id="qrWrapper">
+
+                        <div id="qrcode"></div>
+
+                        <img
+                            id="qrLogo"
+                            src=""
+                            alt="QR Logo"
+                        >
+
+                    </div>
+
+                    <button
+                        id="downloadBtn"
+                        class="download-btn"
+                    >
+                        ⬇️ Download QR PNG
+                    </button>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- ================= SCANNER ================= -->
+
+        <section id="scanner" class="tab-content">
+
+            <div class="card">
+
+                <h2>Scan QR Code</h2>
+
+                <p class="scanner-info">
+                    Allow camera permission and scan a QR code.
+                </p>
+
+                <div id="reader"></div>
+
+                <div id="scanResult" class="scan-result">
+
+                    <h3>Scanned Result</h3>
+
+                    <div
+                        id="resultText"
+                        class="result-text"
+                    ></div>
+
+                    <div
+                        id="scanActions"
+                        class="scan-actions"
+                    >
+
+                        <button
+                            id="copyResult"
+                            class="secondary-btn"
+                        >
+                            📋 Copy
+                        </button>
+
+                        <button
+                            id="openResult"
+                            class="primary-btn"
+                        >
+                            🔗 Open
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </div>
+
+
+    <!-- QR Code Generator Library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+
+    <!-- QR Scanner Library -->
+    <script src="https://unpkg.com/html5-qrcode"></script>
+
+    <!-- Your JavaScript -->
+    <script src="script.js"></script>
+
+</body>
+</html>
