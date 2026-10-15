@@ -65,7 +65,12 @@ qrType.addEventListener("change", function () {
             "https://example.com";
 
     }
+    else if (type === "Whatsapp") {
 
+        inputLabel.textContent = "Enter Whatsapp Number"; 
+        qrText.placeholder = "+8801712345678";
+
+    }
     else if (type === "phone") {
 
         inputLabel.textContent =
@@ -181,10 +186,7 @@ removeLogo.addEventListener("click", function () {
 function createQRData(type, value) {
 
     value = value.trim();
-
-
     if (!value) {
-
         return "";
 
     }
@@ -216,6 +218,22 @@ function createQRData(type, value) {
 
     }
 
+    // ================= Whatsapp =============
+   
+    // ================= WHATSAPP =================
+
+    if (type === "Whatsapp") {
+
+        let cleanNumber = value.replace(/\D/g, "");
+
+        // Convert Bangladesh local number
+        if (cleanNumber.startsWith("0")) {
+            cleanNumber = "88" + cleanNumber;
+        }
+
+        return "https://wa.me/" + cleanNumber;
+
+    }
 
     // ================= PHONE =================
 
@@ -312,9 +330,12 @@ generateBtn.addEventListener("click", function () {
     }
 
 
+
+
     // Validate mobile numbers
     if (
         type === "phone" ||
+        type === "Whatsapp"||
         type === "bkash" ||
         type === "nagad" ||
         type === "rocket"

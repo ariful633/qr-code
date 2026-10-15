@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -52,6 +53,9 @@
                     <option value="url">
                         🔗 Website URL
                     </option>
+                    <option value="Whatsapp">
+                        📱 Whatsapp Number
+                    </option>
 
                     <option value="phone">
                         📱 Phone Number
@@ -77,11 +81,7 @@
                     Enter Text
                 </label>
 
-                <textarea
-                    id="qrText"
-                    rows="4"
-                    placeholder="Enter your text..."
-                ></textarea>
+                <textarea id="qrText" rows="4" placeholder="Enter your text..."></textarea>
 
 
                 <!-- Logo Upload -->
@@ -89,21 +89,13 @@
                     🖼️ Upload Logo
                 </label>
 
-                <input
-                    type="file"
-                    id="logoUpload"
-                    accept="image/png,image/jpeg,image/jpg,image/webp"
-                >
+                <input type="file" id="logoUpload" accept="image/png,image/jpeg,image/jpg,image/webp">
 
 
                 <!-- Logo Preview -->
                 <div id="logoPreview" class="logo-preview">
 
-                    <img
-                        id="previewImage"
-                        src=""
-                        alt="Logo Preview"
-                    >
+                    <img id="previewImage" src="" alt="Logo Preview">
 
                     <button id="removeLogo" type="button">
                         ✕ Remove Logo
@@ -127,18 +119,11 @@
 
                         <div id="qrcode"></div>
 
-                        <img
-                            id="qrLogo"
-                            src=""
-                            alt="QR Logo"
-                        >
+                        <img id="qrLogo" src="" alt="QR Logo">
 
                     </div>
 
-                    <button
-                        id="downloadBtn"
-                        class="download-btn"
-                    >
+                    <button id="downloadBtn" class="download-btn">
                         ⬇️ Download QR PNG
                     </button>
 
@@ -168,27 +153,15 @@
 
                     <h3>Scanned Result</h3>
 
-                    <div
-                        id="resultText"
-                        class="result-text"
-                    ></div>
+                    <div id="resultText" class="result-text"></div>
 
-                    <div
-                        id="scanActions"
-                        class="scan-actions"
-                    >
+                    <div id="scanActions" class="scan-actions">
 
-                        <button
-                            id="copyResult"
-                            class="secondary-btn"
-                        >
+                        <button id="copyResult" class="secondary-btn">
                             📋 Copy
                         </button>
 
-                        <button
-                            id="openResult"
-                            class="primary-btn"
-                        >
+                        <button id="openResult" class="primary-btn">
                             🔗 Open
                         </button>
 
@@ -213,4 +186,5 @@
     <script src="script.js"></script>
 
 </body>
+
 </html>
